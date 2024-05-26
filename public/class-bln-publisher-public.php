@@ -73,6 +73,8 @@ class BLN_Publisher_Public
 
         wp_enqueue_script('bln-webln-button.js', plugin_dir_url(__FILE__) . 'js/bln-webln-button.js', $this->plugin->get_version(), true);
 
+        wp_enqueue_script('qrious', plugin_dir_url(__FILE__) . 'js/qrious.min.js', array(), '4.0.2', true);
+
         wp_localize_script(
             $this->plugin->get_plugin_name(), 'LN_Paywall', array(
             'rest_base' => get_rest_url(null, '/lnp-alby/v1'),

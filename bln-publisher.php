@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       Bitcoin Lightning Publisher
  * Description:       Bitcoin Lightning Publisher is a Paywall and Donation plugin for WordPress to accept instant Bitcoin Lightning payments and donations directly to your preferred wallet.
- * Version:           1.3.1
+ * Version:           1.3.0
  * License:           GPL-3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       lnp-alby
@@ -26,7 +26,7 @@ if (! defined('WPINC') ) {
     die;
 }
 
-define('BLN_PUBLISHER_VERSION', '1.3.1');
+define('BLN_PUBLISHER_VERSION', '1.3.0');
 define('BLN_PUBLISHER_PAYWALL_JWT_KEY', hash_hmac('sha256', 'lnp-alby', AUTH_KEY));
 define('BLN_PUBLISHER_PAYWALL_JWT_ALGORITHM', 'HS256');
 define('BLN_PUBLISHER_ROOT_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
@@ -77,4 +77,12 @@ function run_bln_publisher()
     $plugin->run();
 
 }
+
+function alby_webln_button_enqueue_assets() {
+    wp_enqueue_style('alby-webln-button-style', plugins_url('assets/style.css', __FILE__));
+    wp_enqueue_style('alby-webln-button-editor-style', plugins_url('assets/editor.css', __FILE__), array('wp-edit-blocks'));
+}
+add_action('enqueue_block_assets', 'alby_webln_button_enqueue_assets');
+add_action('enqueue_block_editor_assets', 'alby_webln_button_enqueue_assets');
+
 run_bln_publisher();

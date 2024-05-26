@@ -101,6 +101,7 @@ class LNP_RESTServer
             'class-rest-donations' => 'LNP_DonationsController',
             'class-rest-paywall' => 'LNP_PaywallController',
             'class-rest-invoices' => 'LNP_InvoicesController',
+            'class-rest-account' => 'LNP_AccountController',
             'class-rest-lnurlp' => 'LNP_LnurlpController'
         );
 
