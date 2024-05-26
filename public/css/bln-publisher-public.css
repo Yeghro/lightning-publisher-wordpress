@@ -44,13 +44,14 @@
     margin-top: 20px;
   }
   
-  .wp-lnp-qrcode img {
+  .wp-lnp-qrcode canvas {
     width: 240px;
     display: inline;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Ensure the canvas background is transparent */
   }
-  
+    
   .wp-lnp-copy svg {
     cursor: pointer;
     width: 24px;

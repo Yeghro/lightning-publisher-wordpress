@@ -120,8 +120,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         new QRious({
           element: qrCodeCanvas,
           value: invoice.payment_request,
-          size: 200,
+          size: 200, // Increase size to 250
           level: "L",
+          background: "transparent", // Set background to transparent
+          foreground: "black", // Ensure the QR code itself is visible
         });
       } catch (error) {
         console.error("Failed to generate QR code:", error);
