@@ -1,4 +1,4 @@
-.wp-lnp-webln-button {
+body .wp-lnp-webln-button {
     background: linear-gradient(45deg, orange, purple);
     border: none;
     border-radius: 5px;
@@ -9,6 +9,6 @@
     transition: background 0.3s ease;
 }
 
-.wp-lnp-webln-button:hover {
+body .wp-lnp-webln-button:hover {
     background: linear-gradient(45deg, purple, orange);
 }
